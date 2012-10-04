@@ -1,9 +1,9 @@
 /**
- * jQuery showScreenWidth
- * https://github.com/jiolasa/showScreenWidth
+ * jQuery showViewportWidth
+ * https://github.com/jiolasa/showViewportWidth
  * Author: Matt Stauffer ( http://mattstaufferdesign.com/ )
  *
- * Shows the pixel width in a small banner at the top or bottom of the page.
+ * Shows the viewport's pixel width in a small banner at the top or bottom of the page.
  */
 (function($) {
 	"use strict";
@@ -30,7 +30,7 @@
 					opposite_selector = 'top';
 					break;
 				default:
-					$.error("Sorry, but "+settings.position+" is not a valid position for showScreenWidth.");
+					$.error("Sorry, but "+settings.position+" is not a valid position for showViewportWidth.");
 			}
 			
 			// @todo: Is it better to just create this in html?
@@ -50,7 +50,7 @@
 			marker_style[ 'border-'+opposite_selector ] = '1px solid #fff';
 			
 			$( marker )
-				.attr( 'id', 'showScreenWidth' )
+				.attr( 'id', 'showViewportWidth' )
 				.html( 'Width: ' + $( window ).width() +'px' )
 				.css( marker_style )
 				.appendTo( $("body") );
@@ -65,7 +65,7 @@
 	};
 
 	// start the plugin
-	$.fn.showPixelWidth = function(method) {
+	$.fn.showViewportWidth = function(method) {
 		return methods.init.apply(this, arguments);
 	};
 })(jQuery);
